@@ -1,0 +1,32 @@
+<div class="main-top" id="home">
+    <!-- header -->
+ <app-header-top></app-header-top>
+    <!-- //header -->
+    <!-- banner -->
+  <app-banner></app-banner>
+  </div>
+  <h2 style="text-align : center; ">  Welcome to My shop</h2> <br> <br>
+<div class="row" style="margin-top: 100px;" >
+	<!-- <app-product ngClass="col-lg-4 col-md-6 mb-4"></app-product>
+    <app-product ngClass="col-lg-4 col-md-6 mb-4"></app-product>
+    <app-product ngClass="col-lg-4 col-md-6 mb-4"></app-product> -->
+	<div ngClass="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
+		<div class="card h-100">
+			<a href="#"><img class="card-img-top" [src]="product.img" alt=""></a>
+				<div class="card-body">
+					<h4 class="card-title">
+						<a href="#">{{product.name}}</a>
+					</h4>
+					<h5>${{product.price}}</h5>
+					<p class="card-text">{{product.desc}}</p>
+					<p class="card-text">{{product.status ? 'In stock': 'Out stock'}}</p>
+				</div>
+				<div class="card-footer">
+					<!-- <button class="btn btn-primary" (click)="removeItem(product.id)">Delete</button> -->
+					<button class="btn btn-primary" routerLink="/product/{{product.id}}">Chi tiết</button>
+					<!-- <input type="text" name="" id="" (keyup)="changeName($event)" class="form-control mt-3"> -->
+					<!-- <input type="text" name="" id="" [(ngModel)]="product.name" class="form-control mt-3"> -->
+				</div>
+		</div>
+	</div>
+</div>
